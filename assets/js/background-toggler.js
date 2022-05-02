@@ -16,5 +16,4 @@ const color = [
 function ChangeColorOnLoad() {
     var randomColor = Math.floor(Math.random() * color.length);
     document.body.style.backgroundColor = color[randomColor];
-    console.log('set color to: ', color[randomColor]);
   }
