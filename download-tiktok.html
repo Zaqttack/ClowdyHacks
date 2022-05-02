@@ -3,15 +3,15 @@
         <h2>Downloading Tiktok Video...</h2>
 
         <div class="container p-4">
-            <h6 class="mb-2 text-light">[URL OF VIDEO]</h6>
+            <h6 id="videoURL" class="mb-2 text-light">[URL OF VIDEO]</h6>
             <div class="progress" style="height: 25px;">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <div id="tiktok-progress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
         </div>
 
         <div class="container d-flex justify-content-end">
             <a onclick="updateContent('options')"><button class="btn btn-outline-light" type="button" style="margin-right: 10px;">Start Over</button></a>
-            <button class="btn btn-outline-light" type="button" id="tiktok-download" disabled>Download</button>
+            <a id="tiktok-download-content" download="new-tiktok-video"><button class="btn btn-outline-light" type="button" id="tiktok-download-button" disabled>Download</button></a>
         </div>
     </div>
 </div>

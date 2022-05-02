@@ -59,6 +59,9 @@
         <script type="text/javascript">
             const xhr = new XMLHttpRequest();
             const downloaders = document.getElementById('downloaders-block');
+            let urlDownload;
+            let urlSetter;
+            let urlSetterCounter = 0;
 
             xhr.onload = function() {
                 if (this.status === 200) {
@@ -71,18 +74,47 @@
             xhr.send();
 
             function updateContent(option) {
-                let newRequest = new XMLHttpRequest();
-                
-                newRequest = function() {
-                    if (this.status === 200) {
-                        downloaders.innerHTML = xhr.responseText;
-                    } else {
-                        console.warn('Did not recieve 200 OK from response for footer!');
-                    }
+                if(option === 'tiktok' || option === 'youtube') {
+                    urlDownload = document.getElementById(option + '-link').value;
                 }
-
+                
                 xhr.open('get', 'download-' + option + '.html');
                 xhr.send();
+
+                if(option === 'tiktok' || option === 'youtube') {
+                    urlSetter = setInterval(function() { changeURL(option); }, 10);
+                }
+            }
+
+            function changeURL(option) {
+                urlSetterCounter++;
+
+                if(urlSetterCounter === 2) {
+                    // set the URL
+                    document.getElementById('videoURL').innerHTML = urlDownload;
+                    clearInterval(urlSetter);
+                    urlSetterCounter = 0;
+
+                    // TODO: update the progress bar
+                    let i = 0
+                    let progress = document.getElementById(option + '-progress')
+
+                    // fake for loop to simulate download
+                    for(i; i < 101; i++) {
+                        progress.style.width = i + '%';
+                    }
+
+                    // TODO: make download button not disabled.
+                    // statement unlocks download option once we hit 100%
+                    if(i === 101) {
+                        document.getElementById(option + '-download-button').disabled = false;
+                        document.getElementById(option + '-download-content').href = "./test/george.png"; // this is a test file
+                    }
+                }
+            }
+
+            function delay(time) {
+                return new Promise(resolve => setTimeout(resolve, time));
             }
         </script>
     </body>
