@@ -32,6 +32,7 @@ We are using an ec2 instance configured with a self-signed certificate so that w
 - Next, we utilize the python os library to remove the file from the filesystem. 
 - Then, we utilize boto3 again to connect to s3 and generate a pre-signed URL. We can specify an expiration date for the pre-signed url. The pre-signed URL gives us an easy way for the user to view and download their YouTube video. 
 - Lastly, we return the pre-signed URL back to the client for the user to view. The user is able to navigate to the link via the pre-signed URL, where they are able to view the video in the cloud and download the video to their local filesystem, by right clicking and selecting “save video as.” 
+![architecture.png](assets/architecture.png)
 
 ## Additional Functionality
 
