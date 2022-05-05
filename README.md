@@ -35,7 +35,7 @@ We are using an ec2 instance configured with a self-signed certificate so that w
 
 ## Additional Functionality
 
-- Our chat bot utilizes Google’s Dialogflow CX agent, where we integrate it with Kommunicate for an aesthetically pleasing UI and the ability to take over chat bot communication from users. We provide the Kommunicate platform with our Dialogflow API private key. Integration into our website consists of uploading a script which contains the public key as well as the webhook for our website to push messages to.![image](https://user-images.githubusercontent.com/5168981/166852730-6c8c07e5-1c36-43c9-858e-974b242b2a6f.png)
+- Our chat bot utilizes Google’s Dialogflow CX agent, where we integrate it with Kommunicate for an aesthetically pleasing UI and the ability to take over chat bot communication from users. We provide the Kommunicate platform with our Dialogflow API private key. Integration into our website consists of uploading a script which contains the public key as well as the webhook for our website to push messages to.
 
 # Created by
 
